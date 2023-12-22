@@ -25,8 +25,8 @@ import (
 	"io"
 	"strings"
 
-	gl "cloud.google.com/go/ai/generativelanguage/apiv1"
-	pb "cloud.google.com/go/ai/generativelanguage/apiv1/generativelanguagepb"
+	gl "cloud.google.com/go/ai/generativelanguage/apiv1beta"
+	pb "cloud.google.com/go/ai/generativelanguage/apiv1beta/generativelanguagepb"
 
 	"github.com/google/generative-ai-go/internal"
 	"github.com/google/generative-ai-go/internal/support"
@@ -74,6 +74,7 @@ type GenerativeModel struct {
 
 	GenerationConfig
 	SafetySettings []*SafetySetting
+	Tools          []*Tool
 }
 
 // GenerativeModel creates a new instance of the named generative model.
@@ -134,6 +135,7 @@ func (m *GenerativeModel) newGenerateContentRequest(contents ...*Content) *pb.Ge
 		Model:            m.fullName,
 		Contents:         support.TransformSlice(contents, (*Content).toProto),
 		SafetySettings:   support.TransformSlice(m.SafetySettings, (*SafetySetting).toProto),
+		Tools:            support.TransformSlice(m.Tools, (*Tool).toProto),
 		GenerationConfig: m.GenerationConfig.toProto(),
 	}
 }

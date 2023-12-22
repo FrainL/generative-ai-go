@@ -16,7 +16,7 @@
 
 package: genai
 
-protoImportPath: cloud.google.com/go/ai/generativelanguage/apiv1/generativelanguagepb
+protoImportPath: cloud.google.com/go/ai/generativelanguage/apiv1beta/generativelanguagepb
 supportImportPath: github.com/google/generative-ai-go/internal/support
 
 types:
@@ -50,6 +50,9 @@ types:
       name: BlockReason
       protoPrefix: GenerateContentResponse_PromptFeedback_
 
+    Type:
+      protoPrefix: Type_
+
     Content:
       fields:
         Parts:
@@ -60,6 +63,10 @@ types:
         MimeType:
           name: MIMEType
       docVerb: contains
+
+    FunctionCall:
+    FunctionResponse:
+    FunctionDeclaration:
 
     GenerationConfig:
 
@@ -82,12 +89,19 @@ types:
       fields:
         Index:
           type: int32
+        GroundingAttributions:
+          omit: true
 
     GenerateContentResponse_PromptFeedback:
       name: PromptFeedback
       docVerb: contains
 
     CountTokensResponse:
+
+    Tool:
+      docVerb: contains
+
+    Schema:
 
     TaskType:
       protoPrefix: TaskType
