@@ -20,7 +20,7 @@ import (
 	"fmt"
 
 	pb "cloud.google.com/go/ai/generativelanguage/apiv1beta/generativelanguagepb"
-	"github.com/google/generative-ai-go/internal/support"
+	"github.com/frainl/generative-ai-go/internal/support"
 )
 
 // BatchEmbedContentsResponse is the response to a `BatchEmbedContentsRequest`.

@@ -21,7 +21,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/google/generative-ai-go/genai"
+	"github.com/frainl/generative-ai-go/genai"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"

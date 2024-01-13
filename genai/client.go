@@ -28,8 +28,8 @@ import (
 	gl "cloud.google.com/go/ai/generativelanguage/apiv1beta"
 	pb "cloud.google.com/go/ai/generativelanguage/apiv1beta/generativelanguagepb"
 
-	"github.com/google/generative-ai-go/internal"
-	"github.com/google/generative-ai-go/internal/support"
+	"github.com/frainl/generative-ai-go/internal"
+	"github.com/frainl/generative-ai-go/internal/support"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 )
